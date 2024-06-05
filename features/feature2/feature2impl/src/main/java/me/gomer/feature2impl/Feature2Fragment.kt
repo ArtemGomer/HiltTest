@@ -10,7 +10,7 @@ import androidx.core.os.BundleCompat
 import androidx.core.os.bundleOf
 import me.gomer.feature2api.Feature2Arguments
 
-class Feature2Fragment : Fragment() {
+class Feature2Fragment internal constructor(): Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

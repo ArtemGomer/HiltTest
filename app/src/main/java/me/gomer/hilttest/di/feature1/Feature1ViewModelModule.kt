@@ -15,6 +15,6 @@ interface Feature1ViewModelModule {
 
     @Binds
     @ViewModelScoped
-    fun bindFeature1Navigator(impl: Feature1RouterImpl): Feature1Router
+    fun bindFeature1RouterImplToFeature1Router(impl: Feature1RouterImpl): Feature1Router
 
 }

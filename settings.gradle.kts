@@ -22,6 +22,6 @@ dependencyResolutionManagement {
 rootProject.name = "HiltTest"
 include(":app")
 include(":features:feature1:feature1impl")
-include(":features:feature2:feature2api")
 include(":features:feature2:feature2impl")
 include(":features:feature1:feature1api")
+include(":features:feature2:feature2api")

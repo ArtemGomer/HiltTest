@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class Feature1Fragment : Fragment() {
+class Feature1Fragment internal constructor() : Fragment() {
 
     private val viewModel by viewModels<Feature1ViewModel>()
 

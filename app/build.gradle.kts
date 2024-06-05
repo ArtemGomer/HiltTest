@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -51,11 +51,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     implementation(libs.androidx.fragment.ktx)
-
     implementation(project(":features:feature2:feature2api"))
+
     implementation(project(":features:feature2:feature2impl"))
     implementation(project(":features:feature1:feature1impl"))
     implementation(project(":features:feature1:feature1api"))
