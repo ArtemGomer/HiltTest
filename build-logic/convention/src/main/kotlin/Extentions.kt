@@ -4,17 +4,20 @@ import com.android.build.api.dsl.LibraryExtension
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
+import org.gradle.api.plugins.PluginInstantiationException
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.findByType
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
 
-internal val Project.applicationExtension: ApplicationExtension?
+internal val Project.applicationExtension: ApplicationExtension
     get() = extensions.findByType<ApplicationExtension>()
+        ?: throw PluginInstantiationException("Can only be applied on an android Application")
 
-internal val Project.libraryExtension: LibraryExtension?
+internal val Project.libraryExtension: LibraryExtension
     get() = extensions.findByType<LibraryExtension>()
+        ?: throw PluginInstantiationException("Can only be applied on an android Library")
 
 internal val Project.libs
     get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
@@ -22,10 +25,14 @@ internal val Project.libs
 internal fun Project.configureAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
+    pluginManager.apply(libs.findPlugin("jetbrains-kotlin-android").get().get().pluginId)
     commonExtension.apply {
         compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
         defaultConfig {
             minSdk = libs.findVersion("minSdk").get().toString().toInt()
+        }
+        buildFeatures {
+            viewBinding = true
         }
     }
 }
