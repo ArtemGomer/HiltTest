@@ -14,6 +14,10 @@ constraintlayout = "2.1.4"
 hilt = "2.51.1"
 ksp = "1.9.23-1.0.20"
 
+compileSdk = "34"
+minSdk = "26"
+targetSdk = "34"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
@@ -27,6 +31,9 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 terrakok-cicerone = { module = "com.github.terrakok:cicerone", version.ref = "ciceroneVersion" }
+
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

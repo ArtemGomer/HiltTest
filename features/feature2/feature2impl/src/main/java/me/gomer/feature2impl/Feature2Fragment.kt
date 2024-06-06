@@ -1,22 +1,28 @@
 package me.gomer.feature2impl
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.os.BundleCompat
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import me.gomer.feature2api.Feature2Arguments
+import me.gomer.feature2impl.databinding.FragmentFeature2Binding
 
-class Feature2Fragment internal constructor(): Fragment() {
+class Feature2Fragment internal constructor() : Fragment() {
+
+    private var _viewBinding: FragmentFeature2Binding? = null
+    private val viewBinding: FragmentFeature2Binding
+        get() = requireNotNull(_viewBinding)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_feature2, container, false)
+    ): View {
+        _viewBinding = FragmentFeature2Binding.inflate(layoutInflater, container, false)
+        return viewBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,6 +37,11 @@ class Feature2Fragment internal constructor(): Fragment() {
         view.findViewById<TextView>(R.id.text).text =
             "Number from feature1 = ${arguments?.argument ?: ""}"
 
+    }
+
+    override fun onDestroyView() {
+        _viewBinding = null
+        super.onDestroyView()
     }
 
     companion object {

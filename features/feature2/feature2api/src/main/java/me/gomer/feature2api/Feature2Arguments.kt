@@ -4,4 +4,4 @@ import java.io.Serializable
 
 data class Feature2Arguments(
     val argument: Int
-): Serializable
+) : Serializable
