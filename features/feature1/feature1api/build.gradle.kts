@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":features:feature2:feature2api"))
+    implementation(projects.features.feature2.feature2api)
 }

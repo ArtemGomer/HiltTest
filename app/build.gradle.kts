@@ -39,9 +39,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.androidx.fragment.ktx)
-    implementation(project(":features:feature2:feature2api"))
 
-    implementation(project(":features:feature2:feature2impl"))
-    implementation(project(":features:feature1:feature1impl"))
-    implementation(project(":features:feature1:feature1api"))
+    implementation(projects.features.feature2.feature2api)
+    implementation(projects.features.feature2.feature2impl)
+    implementation(projects.features.feature1.feature1api)
+    implementation(projects.features.feature1.feature1api)
 }

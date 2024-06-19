@@ -1,3 +1,6 @@
+//https://dev.to/aldok/how-to-access-projects-in-multimodule-gradle-project-4500
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
