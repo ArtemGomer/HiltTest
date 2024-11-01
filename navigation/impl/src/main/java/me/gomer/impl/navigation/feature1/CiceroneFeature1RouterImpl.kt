@@ -9,7 +9,7 @@ import me.gomer.impl.navigation.feature2.CiceroneFeature2Screen
 import javax.inject.Inject
 
 class CiceroneFeature1RouterImpl @Inject constructor(
-    private val router: AppRouter<CiceroneScreen<*>>,
+    private val router: AppRouter<CiceroneScreen>,
     private val screenProvider: Feature2ScreenProvider<CiceroneFeature2Screen>,
 ) : Feature1Router {
 

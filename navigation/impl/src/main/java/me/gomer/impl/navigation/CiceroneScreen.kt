@@ -2,9 +2,8 @@ package me.gomer.impl.navigation
 
 import com.github.terrakok.cicerone.Screen
 import me.gomer.api.AppScreen
-import me.gomer.api.NavigationArgument
 
-interface CiceroneScreen<N: NavigationArgument> : AppScreen {
+interface CiceroneScreen : AppScreen {
 
     val ciceroneScreen: Screen
 }

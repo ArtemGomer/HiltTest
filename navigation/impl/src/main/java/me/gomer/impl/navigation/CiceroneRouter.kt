@@ -6,9 +6,9 @@ import javax.inject.Inject
 
 class CiceroneRouter @Inject constructor(
     private val router: Router
-) : AppRouter<CiceroneScreen<*>> {
+) : AppRouter<CiceroneScreen> {
 
-    override fun navigateTo(screen: CiceroneScreen<*>) {
+    override fun navigateTo(screen: CiceroneScreen) {
         router.navigateTo(screen = screen.ciceroneScreen)
     }
 }

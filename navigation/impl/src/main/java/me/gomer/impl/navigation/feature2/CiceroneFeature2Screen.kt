@@ -8,7 +8,7 @@ import me.gomer.impl.navigation.CiceroneScreen
 
 data class CiceroneFeature2Screen(
     val arguments: Feature2Arguments
-) : CiceroneScreen<Feature2Arguments> {
+) : CiceroneScreen {
 
     override val ciceroneScreen: Screen
         get() = FragmentScreen {

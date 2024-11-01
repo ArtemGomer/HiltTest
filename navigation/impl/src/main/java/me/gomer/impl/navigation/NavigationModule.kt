@@ -25,7 +25,7 @@ interface NavigationModule {
     @Singleton
     fun bindCiceroneRouterToAppRouter(
         impl: CiceroneRouter
-    ): AppRouter<CiceroneScreen<*>>
+    ): AppRouter<CiceroneScreen>
 
     @Binds
     @Singleton
