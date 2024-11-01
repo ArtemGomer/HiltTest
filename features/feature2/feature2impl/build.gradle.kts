@@ -4,21 +4,6 @@ plugins {
 
 android {
     namespace = "me.gomer.feature2impl"
-
-    defaultConfig {
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
 }
 
 dependencies {
@@ -30,4 +15,5 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(projects.features.feature2.feature2api)
+    implementation(projects.navigation.api)
 }

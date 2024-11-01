@@ -5,24 +5,6 @@ plugins {
 
 android {
     namespace = "me.gomer.hilttest"
-
-    defaultConfig {
-        applicationId = "me.gomer.hilttest"
-        versionCode = 1
-        versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
 }
 
 dependencies {
@@ -32,7 +14,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.terrakok.cicerone)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -44,4 +26,6 @@ dependencies {
     implementation(projects.features.feature2.feature2impl)
     implementation(projects.features.feature1.feature1api)
     implementation(projects.features.feature1.feature1api)
+    implementation(projects.navigation.api)
+    implementation(projects.navigation.impl)
 }

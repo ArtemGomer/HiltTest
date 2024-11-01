@@ -11,7 +11,12 @@ class AndroidApplicationPlugin : Plugin<Project> {
 
             applicationExtension.apply {
                 configureAndroid(commonExtension = this)
-                defaultConfig.targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                defaultConfig {
+                    targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
+                    applicationId = "me.gomer.hilttest"
+                    versionCode = 1
+                    versionName = "1.0"
+                }
             }
 
             configureKotlin()

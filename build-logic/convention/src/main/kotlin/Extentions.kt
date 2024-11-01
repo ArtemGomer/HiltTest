@@ -29,7 +29,17 @@ internal fun Project.configureAndroid(
     commonExtension.apply {
         compileSdk = libs.findVersion("compileSdk").get().toString().toInt()
         defaultConfig {
+            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             minSdk = libs.findVersion("minSdk").get().toString().toInt()
+            buildTypes {
+                getByName("release") {
+                    isMinifyEnabled = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
+            }
         }
         buildFeatures {
             viewBinding = true
