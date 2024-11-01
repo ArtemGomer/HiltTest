@@ -9,8 +9,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import me.gomer.api.AppRouter
-import me.gomer.feature1api.Feature1ScreenProvider
-import me.gomer.feature2api.Feature2ScreenProvider
+import me.gomer.api.NoArguments
+import me.gomer.api.ScreenProvider
+import me.gomer.feature2api.Feature2Arguments
 import me.gomer.impl.navigation.feature1.CiceroneFeature1Screen
 import me.gomer.impl.navigation.feature1.CiceroneFeature1ScreenProvider
 import me.gomer.impl.navigation.feature2.CiceroneFeature2Screen
@@ -31,14 +32,14 @@ interface NavigationModule {
     @Singleton
     fun bindCiceroneFeature2ScreenProviderToFeature2ScreenProvider(
         impl: CiceroneFeature2ScreenProvider
-    ): Feature2ScreenProvider<CiceroneFeature2Screen>
+    ): ScreenProvider<Feature2Arguments, CiceroneFeature2Screen>
 
 
     @Binds
     @Singleton
     fun bindCiceroneFeature1ScreenProviderToFeature1ScreenProvider(
         impl: CiceroneFeature1ScreenProvider
-    ): Feature1ScreenProvider<CiceroneFeature1Screen>
+    ): ScreenProvider<NoArguments, CiceroneFeature1Screen>
 
     companion object {
 
