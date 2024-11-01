@@ -4,4 +4,5 @@ plugins {
 
 dependencies {
     implementation(projects.features.feature2.feature2api)
+    implementation(projects.navigation.api)
 }

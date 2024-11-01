@@ -22,10 +22,6 @@ dependencies {
 
     implementation(libs.androidx.fragment.ktx)
 
-    implementation(projects.features.feature2.feature2api)
-    implementation(projects.features.feature2.feature2impl)
-    implementation(projects.features.feature1.feature1api)
-    implementation(projects.features.feature1.feature1api)
     implementation(projects.navigation.api)
     implementation(projects.navigation.impl)
 }

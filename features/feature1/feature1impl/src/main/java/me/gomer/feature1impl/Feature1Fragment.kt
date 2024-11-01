@@ -38,4 +38,11 @@ class Feature1Fragment internal constructor() : Fragment() {
         super.onDestroyView()
     }
 
+    companion object {
+
+        fun create(): Feature1Fragment {
+            return Feature1Fragment()
+        }
+    }
+
 }
